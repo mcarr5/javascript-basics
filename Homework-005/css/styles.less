@@ -1,0 +1,85 @@
+@RedColor: #FF0000;
+@BlackColor: #000000;
+@DarkBlue: darkblue;
+@LightBlue: lightblue;
+@DarkCyan: darkcyan;
+@Gray: gray;
+@Inline-Block: inline-block;
+@Center: center;
+@Right: right;
+@Solid: solid;
+@OnePx: 1px;
+@TwoPx: 2px;
+@FivePx: 5px;
+@OneHundredPercent: 100%;
+@SeventyFivePercent: 75%;
+@TwentyFivePercent: 25%;
+@CalculatorWidthDimension: 240px;
+@CalculatorDisplayWidth: 230px;
+@FortyPx: 40px;
+
+body {
+
+}
+
+.calculatorTable {
+	width: @CalculatorWidthDimension;
+	text-align: @Center;
+}
+
+.calculatorCell {
+	width: @TwentyFivePercent;
+	height: @TwentyFivePercent;
+}
+
+.redText {
+	color: @RedColor;
+}
+
+.calculatorTitle {
+	color: @DarkBlue;
+	text-shadow: @TwoPx @TwoPx @TwoPx @DarkBlue;
+}
+
+.calculator {
+	border: @TwoPx @Solid;
+	border-color: @DarkCyan;
+	border-radius: @FivePx;
+	background: @LightBlue;
+	width: @CalculatorWidthDimension;
+	text-align: @Center;
+	color: @DarkCyan;
+}
+
+.calculatorButton {
+	border: @OnePx @Solid @BlackColor;
+	border-radius: @FivePx;
+	width: @FortyPx;
+	height: @FortyPx;
+	color: @DarkBlue;
+}
+
+.calculatorButtonBottom {
+	border: @OnePx @Solid @BlackColor;
+	border-radius: @FivePx;
+	width: @FortyPx;
+	height: @FortyPx;
+	color: @DarkBlue;
+}
+
+.button {
+	display: @Inline-Block;
+	border: @OnePx @Solid @Gray;
+}
+
+#calculatorDisplay {
+	border: @OnePx @Solid @BlackColor;
+	border-radius: @FivePx;
+	width: @CalculatorDisplayWidth;
+	text-align: @Right;
+	line-height: normal;
+}
+
+.calculatorBottomRows {
+	display: @Inline-Block;
+}

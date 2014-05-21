@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KendoUI Artist, Album, and Song Management</title>
+
+    <link href="http://cdn.kendostatic.com/2013.3.1324/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2013.3.1324/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2013.3.1324/styles/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2013.3.1324/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+
+    <style>
+        div.box {
+            float: left;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2013.3.1324/js/kendo.all.min.js"></script>
+    <script src="artist.grid.js"></script>
+    <script src="album.grid.js"></script>
+    <script src="song.grid.js"></script>
+    <script type="text/x-kendo-template" id="artistGridToolbarTemplate">
+            <div>
+                <div class="box">
+                    <span style="font-size:x-large; font-weight: bold">Artists</span>
+                </div>
+            </div>
+            <div style="float: right">
+                <div class="box">
+                    <a class="k-button k-button-icontext k-grid-add" href="\#">
+                    <span class="k-icon k-add"></span>
+                    Add new Artist
+                    </a>
+                </div>
+                <div class="box">
+                    <a class="k-button k-button-icontext" href="\#" onclick="loadAlbumGrid()">
+                        <span></span>
+                        View Albums
+                    </a>
+                </div>
+                <div class="box">
+                    <a class="k-button k-button-icontext" href="\#" onclick="loadSongGrid()">
+                        <span></span>
+                        View Songs
+                    </a>
+                </div>
+            </div>
+            
+    </script>
+    <script type="text/x-kendo-template" id="albumGridToolbarTemplate">
+            <div>
+                <div class="box">
+                    <span style="font-size:x-large; font-weight: bold">Albums</span>
+                </div>
+            </div>
+            <div style="float: right">
+                <div class="box">
+                    <a class="k-button k-button-icontext k-grid-add" href="\#">
+                    <span class="k-icon k-add"></span>
+                    Add new Album
+                    </a>
+                </div>
+                <div class="box">
+                    <a class="k-button k-button-icontext" href="\#" onclick="loadArtistGrid()">
+                        <span></span>
+                        View Artists
+                    </a>
+                </div>
+                <div class="box">
+                    <a class="k-button k-button-icontext" href="\#" onclick="loadSongGrid()">
+                        <span></span>
+                        View Songs
+                    </a>
+                </div>
+            </div>
+    </script>
+    <script type="text/x-kendo-template" id="songGridToolbarTemplate">
+            <div>
+                <div class="box">
+                    <span style="font-size:x-large; font-weight: bold">Songs</span>
+                </div>
+            </div>            
+            <div style="float : right">
+                <div class="box">
+                    <a class="k-button k-button-icontext k-grid-add" href="\#">
+                        <span class="k-icon k-add"></span>
+                        Add new Song
+                    </a>
+                </div>
+                <div class="box">
+                    <a class="k-button k-button-icontext" href="\#" onclick="loadArtistGrid()">
+                        <span></span>
+                        View Artists
+                    </a>
+                </div>
+                <div class="box">
+                    <a class="k-button k-button-icontext" href="\#" onclick="loadAlbumGrid()">
+                        <span></span>
+                        View Albums
+                    </a>           
+                </div>   
+            </div>
+    </script>
+</head>
+<body>
+    <div id="artistGrid">
+    </div>
+    <div id="albumGrid">
+    </div>
+    <div id="songGrid">
+    </div>
+</body>
+</html>
+

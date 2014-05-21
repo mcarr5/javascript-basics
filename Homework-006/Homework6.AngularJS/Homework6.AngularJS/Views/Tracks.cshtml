@@ -1,0 +1,22 @@
+﻿@{
+    PageData["title"] = "AngularJS SPA | Tracks";
+}
+<label>Track Search:</label>
+<input type="text" id="trackSearch" ng-model="trackKeyword" placeholder="Track Search Keyword" />
+<input type="submit" ng-click="search()" title="Search" value="Search"></input>
+<ul>
+    <li ng-repeat="track in tracks">
+        Track Name: {{ track.name }}, Track Url: <a href='{{track.songUrl}}'>{{ track.songUrl }}</a>, Track Length: {{ track.length }}
+        <br />
+        <input type="text" ng-model="track.name">
+        <input type="text" ng-model="track.songUrl">
+        <input type="text" ng-model="track.length">
+        <input type="submit" ng-click="updateTrack(track)" value="Update" title="Update" />
+        <input type="submit" ng-click="deleteTrack(track)" value="Delete" title="Delete" />
+        <br /><br />
+    </li>
+</ul>
+<input type="text" ng-model="newTrackName" placeholder="New Track Name">
+<input type="text" ng-model="newTrackSongUrl" placeholder="New Track Song Url">
+<input type="text" ng-model="newTrackLength" placeholder="New Track Length">
+<input type="submit" ng-click="createTrack()" value="Create">

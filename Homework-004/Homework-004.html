@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <title>Homework 004</title>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.1.0.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="Homework-004.css" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="Homework-004.js"></script>
+</head>
+<body>
+    <!--Using Jquery UI Tabs for breadcrumbs: https://jqueryui.com/tabs/-->
+    <div id="tabs">
+        <ul>
+            <!-- #1 -->
+            <li><a href="#homeDiv" id="homeTab" onclick="showHomeDiv()">Home</a></li>
+            <!-- #2 -->
+            <li><a href="#artistDetailsDiv" id="artistDetailsTab" hidden="hidden" onclick="showArtistDetailsDiv($('#selectedArtistId').val(), 'false')"></a></li>
+            <!-- #3 -->
+            <li><a href="#artistAddEditDiv" id="artistAddEditTab" hidden="hidden">Add/Edit Artist</a></li>
+            <!-- #4 -->
+            <li><a href="#albumNameDiv" id="albumNameTab" hidden="hidden" onclick="showAlbumDetailsDiv($('#selectedAlbumId').val(), 'false')"></a></li>
+            <!-- #5 -->
+            <li><a href="#addEditAlbumDiv" id="addEditAlbumTab" hidden="hidden">Add/Edit Album</a></li>
+            <!-- #6 -->
+            <li><a href="#songInfoDiv" id="songInfoTab" hidden="hidden" onclick="showSongInfoDiv($('#selectedSongId').val(), 'false')"></a></li>
+            <!-- #7 -->
+            <li><a href="#editSongInfoDiv" id="editSongInfoTab" hidden="hidden">Add/Edit Song Info</a></li>
+        </ul>
+
+        <!-- #1 -->
+        <div id="homeDiv">
+            <div id="artistSearchDiv">
+                <b>Artist Search:</b>
+                <input type="text" id="artistInput" />
+                <input type="button" id="artistSearch" value="Search" onclick="artistSearch($('#artistInput').val())" />
+            </div>
+            <div id="artistSearchResultsDiv">
+            </div>
+            <div id="artistAddButtonDiv">
+                <input type="button" id="artistAdd" value="Add Artist" onclick="showArtistAddEditDiv('true', 'true')" />
+            </div>
+        </div>
+
+        <input id="selectedArtistId" type="hidden" />
+        <input id="selectedAlbumId" type="hidden" />
+        <input id="selectedSongId" type="hidden" />
+        <input id="addArtist" type="hidden" />
+        <input id="addAlbum" type="hidden" />
+        <input id="addSong" type="hidden" />
+
+        <!-- #2 -->
+        <div id="artistDetailsDiv" hidden="hidden">
+            <div id="artistDetailsContentDiv">
+            </div>
+            <div id="artistEditButton">
+                <input type="button" id="artistEdit" value="Edit Artist" onclick="showArtistAddEditDiv('false', 'true')" />
+            </div>
+        </div>
+
+        <!-- #3 -->
+        <div id="artistAddEditDiv" hidden="hidden">
+            <h3>Add/Edit Artist</h3>
+            <div id="artistAddEditContentDiv">
+                Artist Name:
+            <input type="text" id="artistName" />
+                Artist Description:
+            <input type="text" id="artistDescription" />
+            </div>
+            <div id="artistSaveButton">
+                <input type="button" id="artistSave" value="Save Artist" onclick="saveArtistDetails($('#artistName').val(), $('#artistDescription').val(), $('#addArtist').val())" />
+            </div>
+        </div>
+
+        <!-- #4 -->
+        <div id="albumNameDiv" hidden="hidden">
+            <div id="albumNameContentDiv">
+            </div>
+            <div id="albumEditButton">
+                <input type="button" id="albumEdit" value="Edit Album" onclick="showAddEditAlbumDiv('false', 'true')" />
+            </div>
+        </div>
+
+        <!-- #5 -->
+        <div id="addEditAlbumDiv" hidden="hidden">
+            <h3>Add/Edit Album</h3>
+            <div id="addEditAlbumContentDiv">
+                Album Name:
+            <input type="text" id="albumName" />
+                Album Description:
+            <input type="text" id="albumDescription" />
+                Album Image URL:
+            <input type="text" id="albumImageURL" />
+            </div>
+            <div id="albumSaveButton">
+                <input type="button" id="albumSave" value="Save Album" onclick="saveAlbumDetails($('#albumName').val(), $('#albumDescription').val(), $('#albumImageURL').val(), $('#addAlbum').val())" />
+            </div>
+        </div>
+
+        <!-- #6 -->
+        <div id="songInfoDiv" hidden="hidden">
+            <div id="songInfoContentDiv">
+            </div>
+            <div id="editSongInfoButton">
+                <input type="button" id="songInfoEdit" value="Edit Song" onclick="showAddEditSongInfoDiv('false', 'true')" />
+            </div>
+        </div>
+
+        <!-- #7 -->
+        <div id="editSongInfoDiv" hidden="hidden">
+            <h3>Add/Edit Song Info</h3>
+            <div id="editSongInfoContentDiv">
+                Song Name:
+            <input type="text" id="songName" />
+                Song URL:
+            <input type="text" id="songURL" />
+                Song Duration:
+            <input type="text" id="songDuration" />
+            </div>
+            <div id="saveSongButton">
+                <input type="button" id="songSave" value="Save Song" onclick="saveSongDetails($('#songName').val(), $('#songURL').val(), $('#songDuration').val(), $('#addSong').val())" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

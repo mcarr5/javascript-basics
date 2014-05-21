@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Problem-004</title>
+    <style type="text/css">
+        table {
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Choose a Color:</td>
+                <td>
+                    <input list="colors" name="color" />
+                    <datalist id="colors">
+                        <option value="red"></option>
+                        <option value="blue"></option>
+                        <option value="green"></option>
+                        <option value="yellow"></option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail Address:</td>
+                <td>
+                    <input id="Email" type="email" /></td>
+            </tr>
+            <tr>
+                <td>Enter a Url:</td>
+                <td>
+                    <input id="URL" type="url" /></td>
+            </tr>
+            <tr>
+                <!--<td>Birthday:</td>
+                <td>                    
+                    <input type="text" name="Birthday" title="M-D-YYYY or MM/DD/YYYY between 1-1-1980 and 12/31/2014"
+                        pattern="([1][12]|[0]?[1-9])[\/-]([3][01]|[12]\d|[0]?[1-9])[\/-]([1][9][8-9][0-9]|[2][0][0-1][0-4])" required="required" />
+                </td>-->
+                <td>Pick a Number:</td>
+                <td>
+                    <input id="Number" type="number" min="15" max="100" />
+                </td>
+            </tr>
+        </table>
+        <input id="Submit" type="submit" value="Submit" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Problem-003</title>
+</head>
+<body>
+    <!-- Draw Magenic - black background, white bold text, green dot, no trademark -->
+    <canvas id="magenicLogo" width="256" height="72" style="border: 1px solid #000000;"></canvas>
+
+    <script>
+        var c = document.getElementById("magenicLogo");
+        var ctx = c.getContext("2d");
+        var black_gradient = ctx.createLinearGradient(0, 0, 800, 0);
+        black_gradient.addColorStop(0, "black");
+        black_gradient.addColorStop(1, "white");
+        
+        ctx.fillStyle = black_gradient;
+        ctx.fillRect(0, 0, 256, 72);
+        ctx.font = "italic bolder 50px sans-serif";
+        ctx.fillStyle = "white";
+        ctx.fillText("Magenic", 30, 50);
+        ctx.beginPath();
+        ctx.moveTo(198, 13);
+        ctx.lineTo(206, 13);
+        ctx.lineTo(196, 21);
+        ctx.moveTo(204, 21);
+        ctx.lineTo(206, 13);
+        ctx.lineTo(196, 21);
+        ctx.closePath();
+        ctx.fillStyle = "limegreen";
+        ctx.fill();
+    </script>
+</body>
+</html>

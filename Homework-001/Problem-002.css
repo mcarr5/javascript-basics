@@ -1,0 +1,42 @@
+﻿body {
+
+}
+
+table {
+    width: 160px;
+    text-align: center;
+}
+
+td {
+    width: 25%;
+    height: 25%;
+}
+
+.calculator-title {
+    color:darkblue;
+    text-shadow: 2px 2px 2px darkblue;
+}
+
+.calculator {
+    border: 2px solid;
+    border-color: darkcyan;
+    border-radius: 5px;
+    background: lightblue;
+    width: 160px;
+    text-align: center;
+    color: darkcyan;
+}
+
+.calculator-button {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 75%;
+    height: 100%;
+    color: darkblue;
+}
+
+#calculator-display {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    text-align:right;
+}

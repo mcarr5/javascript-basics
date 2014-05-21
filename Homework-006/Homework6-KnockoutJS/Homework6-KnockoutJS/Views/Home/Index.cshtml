@@ -1,0 +1,39 @@
+﻿@model Homework6_KnockoutJS.Models.LoginModel
+@{
+    ViewBag.Title = "Tracks";
+}
+
+<header>
+    <h2>@ViewBag.Title</h2>
+</header>
+
+<div>
+        <label>Track Search:</label>
+        <input type="text" data-bind="value: searchText, placeholder : 'Track Keyword'" />
+        <input type="submit"  title="Search" value="Search" style="cursor:pointer" data-bind="click: search" />
+        <ul data-bind="foreach: tracks">
+            <li>
+                <label>Track Name:</label> <span data-bind="text : name"></span>, 
+                <label>Track Url:</label> <a data-bind="attr: { href: songUrl, title: songUrl }, text: songUrl "></a>, 
+                <label>Track Length:</label> <span data-bind="text: length"></span>
+                <br />
+                <input type="text" data-bind="value: name" />
+                <input type="text" data-bind="value: songUrl" />
+                <input type="text" data-bind="value: length" />
+                <input type="submit" style="cursor:pointer" data-bind="click : $parent.updateTrack.bind($parent)" value="Update" title="Update" />
+                <input type="submit" style="cursor:pointer" data-bind="click : $parent.deleteTrack.bind($parent)" value="Delete" title="Delete" />
+                <br /><br />
+            </li>
+        </ul>
+        <input type="text" data-bind="value: newTrackName, placeholder : 'New Track Name'" />
+        <input type="text" data-bind="value: newTrackSongUrl, placeholder : 'New Track Song Url'" />
+        <input type="text" data-bind="value: newTrackLength, placeholder : 'New Track Length'" />
+        <input type="submit" style="cursor:pointer" data-bind="click : createTrack" value="Create">
+</div>
+
+@section scripts {
+    @Scripts.Render("//ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.1.2.min.js")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/track")
+}
