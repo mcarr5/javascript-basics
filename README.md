@@ -1,3 +1,3 @@
 javascript-basics
 =================
-Basics of javascript, jquery, typescript, angularjs, knockoutjs, kendo, bootstrap, and less
+Basics of Javascript, JQuery, Typescript, AngularJS, KnockoutJS, Kendo, Bootstrap, and Less
